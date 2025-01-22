@@ -8,5 +8,9 @@
       {{ block "main" . }}{{ end }}
     </main>
     {{ block "footer" . }}{{ partialCached "footer.html" . }}{{ end }}
+    
+    {{ if site.Config.Services.GoogleAnalytics.ID }}
+    {{ template "_internal/google_analytics.html" . }}
+    {{ end }}
   </body>
 </html>
